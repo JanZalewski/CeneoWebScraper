@@ -6,7 +6,7 @@ from app.models.opinion import Opinion
 
 class Product:
     
-    def __init__(self, productId, productName = None, opinions = []):
+    def __init__(self, productId, productName = None, opinions = []) -> None:
         self.productId = productId
         self.productName = productName
         self.opinions = opinions
