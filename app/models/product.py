@@ -20,6 +20,7 @@ class Product:
             for opinion in opinions:
                 self.opinions.append(Opinion().extractOpinion(opinion).transformOpinion())
 
+
             respons = requests.get("https://www.ceneo.pl/{}/opinie-".format(self.productId)+str(page), allow_redirects = False)
             if respons.status_code==200:
                 page += 1      
