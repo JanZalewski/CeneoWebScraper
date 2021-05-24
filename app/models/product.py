@@ -18,7 +18,7 @@ class Product:
             pageDOM = BeautifulSoup(respons.text, 'html.parser')
             opinions = pageDOM.select("div.js_product-review")
             for opinion in opinions:
-                self.opinions.append(Opinion().extractOpinion(opinion).transformOpinion())
+                self.opinions.append(Opinion().extractOpinion(opinion))
 
             respons = requests.get("https://www.ceneo.pl/{}/opinie-".format(self.productId)+str(page), allow_redirects = False)
             if respons.status_code==200:

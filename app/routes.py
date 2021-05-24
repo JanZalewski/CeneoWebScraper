@@ -1,4 +1,4 @@
-from app.models.product import Product
+
 from app import app
 from app.models.product import Product
 
@@ -23,5 +23,5 @@ def about():
     pass
 
 @app.route('/product/<productId>')
-def product(parametr):
+def product(productId):
     pass
