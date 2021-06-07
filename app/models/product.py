@@ -3,6 +3,7 @@ import requests
 import json 
 from app.utils import extractComponent
 from app.models.opinion import Opinion
+from flask.globals import request
 
 class Product:
     
@@ -16,7 +17,7 @@ class Product:
             "https://www.ceneo.pl/{}#tab=reviews".format(self.productId))
         if respons.status_code == requests.codes.ok:
             pageDOM = BeautifulSoup(respons.text, 'html.parser')
-            self.productName = extractComponent(pageDOM, 'js_product-h1-link')
+            self.productName = extractComponent(pageDOM, '.js_product-h1-link')
             
     def extractProduct(self):
         respons = requests.get("https://www.ceneo.pl/{}#tab=reviews".format(self.productId))

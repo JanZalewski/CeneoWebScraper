@@ -2,13 +2,17 @@
 
 {% block middle %}
     <h2>{{productName}}</h2>
-    {#<div>{{ product }}</div>#}
-    <table class="table tbable-stripped" id="opinions">
+    {# <div>{{ product }}</div> #}
+    <table class="table table-striped" id='opinions'>
 
     </table>
+    {# {{ table|safe }} #}
 {% endblock middle %}
 
 {% block scripts %}
-
+    <script>
+        $(document).ready( function () {
+            $('#opinions').DataTable();
+        } );
+    </script>
 {% endblock scripts %}
-
