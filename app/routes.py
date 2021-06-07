@@ -1,5 +1,4 @@
 from re import split
-from requests.api import request
 from app import app
 from app.models.product import Product
 from flask import render_template, redirect, url_for, request
